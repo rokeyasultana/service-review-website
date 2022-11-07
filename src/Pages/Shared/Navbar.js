@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const menuItems = <>
-    <li className='hover:underline hover:text-sky-700 hover:font-semibold'><Link to="/">Home</Link></li>
-    <li className='hover:underline hover:text-sky-700 hover:font-semibold'><Link to="/blog">Blog</Link></li>
-    <li className='hover:underline hover:text-sky-700 hover:font-semibold'><Link to="/login">Login</Link></li>
+    <li className='hover:underline hover:text-slate-500 hover:font-semibold'><Link to="/">Home</Link></li>
+    <li className='hover:underline hover:text-slate-500 hover:font-semibold'><Link to="/blog">Blog</Link></li>
+    <li className='hover:underline hover:text-slate-500 hover:font-semibold'><Link to="/login">Login</Link></li>
                       
 </>
     return (
         <div>
-            <div className='text-sky-500'>
+            <div className='text-white bg-sky-300'>
              <div className="navbar ">
           <div className="navbar-start">
               <div className="dropdown">
@@ -23,7 +23,7 @@ const Navbar = () => {
                   </ul>
               </div>
               <img className='ml-10' style={{height: "40px"}} src="" alt="" />
-              <a className="btn btn-ghost normal-case text-xl font-sans hover:underline">Guide Start</a>
+              <a href='' className="btn btn-ghost normal-case text-xl font-sans hover:underline" >Guide Start</a>
           </div>
           <div className="navbar-center hidden lg:flex ml-20">
               <ul className="menu menu-horizontal p-0 ">
