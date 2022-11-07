@@ -37,6 +37,18 @@ const Blog = () => {
     
   </div>
 </div>
+<div class="card  card-compact w-96  shadow-xl border-2 border-sky-300">
+  
+  <div class="card-body">
+    <h2 class="card-title">What is the difference between javascript and NodeJS?</h2>
+    <p>* JavaScript is a lightweight object oriented scripting language. Nodejs is not a language. It is a cross-platform, open-source, server side runtime environment.<br></br>
+
+* Javascript is used to build dynamic HTML pages with interactive effects on a webpage, mobile Application, Games, and Server Application etc. NodeJs facilities JavaScript to be run on a server.<br></br>
+
+* All browsers have in built javascript engines, which is why browsers can run the javascript codes of web pages. Nodejs uses V8 engine which enables it to parse and run javascript code.</p>
+    
+  </div>
+</div>
 
     
       </div>
