@@ -8,8 +8,8 @@ const Blog = () => {
         <h2 className='text-center text-sky-500 font-serif text-5xl mt-5'>FAQ</h2>
       </div>
       
+      <div >
       <div  className='justify-center justify-items-center grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  mt-20 mb-35  gap-4  text-black '>
-      <div>
       <div data-aos="fade-left"
             data-aos-duration="1000"
             data-aos-delay="200" class="card  card-compact w-96 shadow-xl border-2 border-sky-300">
@@ -29,6 +29,16 @@ const Blog = () => {
     
   </div>
 </div>
+<div class="card  card-compact w-96  shadow-xl border-2 border-sky-300">
+  
+  <div class="card-body">
+    <h2 class="card-title">What is the purpose of jwt and how does it work</h2>
+    <p>JWT also known as JSON web token provides you a way of representing claims to transferred between two parties. It is mainly used for authorization purpose not authentication. JWT consists of there part first is header .Second is payload and third is the signature. The header and the payload are base 64 encoded strings. It can be decoded without any need for password. So anyone can read plane text format</p>
+    
+  </div>
+</div>
+
+    
       </div>
     
       </div>
