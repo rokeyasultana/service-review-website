@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const menuItems = <>
+   
     <li className='hover:underline hover:text-slate-500 hover:font-semibold'><Link to="/">Home</Link></li>
     <li className='hover:underline hover:text-slate-500 hover:font-semibold'><Link to="/blog">Blog</Link></li>
     <li className='hover:underline hover:text-slate-500 hover:font-semibold'><Link to="/login">Login</Link></li>
-                      
+               
 </>
     return (
         <div>
