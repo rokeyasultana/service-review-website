@@ -1,7 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import Slider from '../Slider/Slider'
-import Testimonial from '../Testimonial/Testimonial';
+import Services from './Services/Services';
+import Testimonial from './Testimonial/Testimonial';
+
+import TopBanner from './TopBanner';
+
 
 
 const Home = () => {
@@ -10,8 +13,10 @@ const Home = () => {
         <Helmet>
         <title>Home</title>
         </Helmet>
-            <Slider></Slider>
-            <Testimonial></Testimonial>
+    <TopBanner></TopBanner>
+    <Services></Services>
+    <Testimonial></Testimonial>
+     
         </div>
     );
 };
