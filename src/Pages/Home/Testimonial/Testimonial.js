@@ -6,7 +6,7 @@ const Testimonial = () => {
             
           <div>
             
-        <div className= 'bg-cyan-400   w-4/5 py-2 px-2 mt-28 bg-opacity-40 mb-40'>
+        <div className= 'bg-cyan-400   w-4/5 py-2 px-2 mt-28 bg-opacity-40 mb-40 ml-10 mr-10'>
 
 <h2 className='mt-5 text-center text-3xl font-semibold text-white '>Best tour service provider,excellent vacation</h2>
 <p  className='mt-5 text-center text-white '>Good things come to those who travel</p>
