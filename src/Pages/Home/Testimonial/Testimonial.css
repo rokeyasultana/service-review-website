@@ -4,9 +4,11 @@ background-repeat: no-repeat;
 background-size: auto;
 height: 100%;
 width: 100%;
+background-size: cover;
 background-position: center;
 margin-top: 50px;
 margin-bottom: 50px;
+
 
 
 }
