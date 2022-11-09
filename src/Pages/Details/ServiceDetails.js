@@ -4,7 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 import 'react-photo-view/dist/react-photo-view.css';
 const ServiceDetails = () => {
     const service = useLoaderData();
-    const {  _id, img, price, title, description } = service;
+    const {  _id, img, price, title, description,ratings } = service;
 
     return (
         <div>
@@ -16,11 +16,10 @@ const ServiceDetails = () => {
             </PhotoProvider>
   <div className="card-body items-center text-center">
     <h2 className="card-title">{title}</h2>
-    <p>Price: ${price}</p>
+    <p className='text-sky-300'>Price: ${price}</p>
+    <p className='text-sky-300'>Ratings: {ratings}</p>
     <p>{description}</p>
-    <div className="card-actions">
-      <button className="btn btn-primary">Buy Now</button>
-    </div>
+   
   </div>
 </div> 
         </div>
