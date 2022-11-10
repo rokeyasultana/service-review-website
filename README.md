@@ -1,6 +1,6 @@
 #  About website
 
-This project (Guide Star) was tailwind css with [Create React App].
+This project (Guide Star) was tailwind css with [Create React App]. Here tour guide services are edited.
 
 ### Live site : <a href='https://lustrous-sundae-bd9fc2.netlify.app/'> Guide Start</a>
 
