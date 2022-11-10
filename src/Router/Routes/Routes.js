@@ -3,6 +3,7 @@ import AddService from "../../Pages/AddService/AddService";
 import AllServices from "../../Pages/AllServices/AllServices";
 import Blog from "../../Pages/Blog/Blog";
 import ServiceDetails from "../../Pages/Details/ServiceDetails";
+import EditReview from "../../Pages/EditReview/EditReview";
 import ErrorElement from "../../Pages/ErrorElement/ErrorElement";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
                 <Reviews></Reviews>
             </PrivateRoutes>,
              loader: ({params})=> fetch(`https://service-review-server-sable.vercel.app/services/${params.id}`)
+        },
+        {path:'/editReview/:id',
+        element: <EditReview></EditReview>,
+        loader: ({params})=>fetch(`https://service-review-server-sable.vercel.app/reviews/${params.id}`)
         },
         {
             path: '/addservice',

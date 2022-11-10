@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MyReviewRow = ({ review, handleDelete, handleStatusUpdate}) => {
 
@@ -15,9 +16,12 @@ const MyReviewRow = ({ review, handleDelete, handleStatusUpdate}) => {
     <p>{email}</p>
     <p>Review: {message }</p>
     <div class="text-center mx-auto gap-3">
-      <button  onClick={() => handleStatusUpdate(_id)} class="btn btn-info">Update</button>
      
+     <Link  to={`/editReview/${_id}`}>
+     <button  onClick={() => handleStatusUpdate(_id)} class="btn btn-info">Update</button>
+     </Link>
     </div>
+    
     <button onClick={() => handleDelete(_id)}  class="btn  mt-3">Delete</button>
   </div>
 </div>

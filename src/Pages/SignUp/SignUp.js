@@ -8,7 +8,7 @@ const SignUp = () => {
   useTitle('Sign Up')
   
     const [error,setError] =useState('')
-  const { googleLogIn, createUser, updateUserProfile } =
+  const {  createUser, updateUserProfile } =
   useContext(AuthContext);
 
 const navigate = useNavigate();
@@ -34,13 +34,7 @@ const handleSubmit = (event) => {
     });
 };
 
-const handleGoogleSignIn = () => {
-  googleLogIn()
-    .then((result) => {
-      navigate("/");
-    })
-    .catch((error) => console.error(error));
-};
+
 
 const profileUpdate = (name, photoURL) => {
     updateUserProfile(name, photoURL)
@@ -98,9 +92,7 @@ const profileUpdate = (name, photoURL) => {
         <small>Already have an account?<Link to='/login'><span className='text-sky-400'> Please Login</span></Link></small>
       </div>
 </div>
-<div className='text-center mt-5 mb-3'>
-   <button  onClick={handleGoogleSignIn} class="btn btn-outline btn-info ">Google Sign up</button>
-   </div>
+
    
     </div>
   </div>  
