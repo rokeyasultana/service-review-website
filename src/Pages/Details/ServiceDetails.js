@@ -1,18 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link, useLoaderData } from 'react-router-dom';
 import 'react-photo-view/dist/react-photo-view.css';
-import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
+
 import useTitle from '../../hooks/useTitle';
+
 
 const ServiceDetails = () => {
   useTitle('Service-Details')
     const service = useLoaderData();
     const {  _id, img, price, title, description,ratings } = service;
-    const { user } = useContext(AuthContext);
-
-
-  
+   
 
     return (
         <div className='grid justify-items-center lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1'>
@@ -41,6 +39,7 @@ const ServiceDetails = () => {
  </div>
  
 </div>
+
         </div>
     );
 };

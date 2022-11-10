@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
+import Loading from '../Shared/Loading';
 
 const Login = () => {
 useTitle('Login')
@@ -13,8 +14,11 @@ useTitle('Login')
    
   
   
-      const {providerLogin, logInWithEmailPassword} = useContext(AuthContext)
+      const {providerLogin, logInWithEmailPassword,loading} = useContext(AuthContext)
   
+      if(loading){
+        return<Loading></Loading>
+      }
    
     const from = location.state?.from?.pathname || "/";
   

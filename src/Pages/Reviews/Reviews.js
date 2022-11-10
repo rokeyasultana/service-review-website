@@ -1,14 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
+import AllReviews from './AllReviews';
 
 const Reviews = () => {
     useTitle('Reviews')
     const service = useLoaderData();
     const {  _id, price, title } = service;
     const { user } = useContext(AuthContext);
-
+   
     const handlePlaceReview= event => {
         event.preventDefault();
         const form = event.target;
@@ -21,6 +22,7 @@ const Reviews = () => {
             service: _id,
             serviceName: title,
             price,
+            serviceId: _id,
             customer: name,
             email,
             phone,
@@ -38,17 +40,16 @@ const Reviews = () => {
        })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+               console.log(data)
                 if(data.acknowledged){
-                    alert('Review placed successfully')
+                    alert('Review added successfully')
                     form.reset();
                     
                 }
             })
             .catch(er => console.error(er));
-
-
     }
+
     return (
         <div >
              <div className='flex justify-center '>
@@ -68,8 +69,12 @@ const Reviews = () => {
   
 <input className='btn' type="submit" value="Give review" />
 </div>
+
           </form>
+   
+        
 </div>
+
         </div>
     );
 };

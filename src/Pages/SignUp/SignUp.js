@@ -6,6 +6,7 @@ import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
 
 const SignUp = () => {
   useTitle('Sign Up')
+  
     const [error,setError] =useState('')
   const { googleLogIn, createUser, updateUserProfile } =
   useContext(AuthContext);

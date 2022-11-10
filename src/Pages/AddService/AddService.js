@@ -1,53 +1,49 @@
-import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useContext} from 'react';
+import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
 
-const AddService = ({service}) => {
+
+const AddService = () => {
+    useTitle('Add services')
     const {user} = useContext(AuthContext);
+
+
   
-    const handlePlaceService = event => {
+    const handleAddService = event => {
+
         event.preventDefault();
+
         const form = event.target;
-        const name = `${form.firstName.value} ${form.lastName.value}`;
+        const title = form.title.value;;
         const email = user?.email || 'unregistered';
-        const phone = form.phone.value;
-        const message = form.message.value;
+        const price = form.price.value;
+        const description = form.description.value;
+        const image = form.image.value;
 
-        // const service = {
-        //     service: ,
-        //     serviceName:,
-        //     price,
-        //     customer: name,
-        //     email,
-        //     phone,
-        //     message
-        // }
+        console.log(title,email,price,description,image);
 
-        // if(phone.length > 10){
-        //     alert('Phone number should be 10 characters or longer')
-        // }
-        // else{
+        const services = {
+            title,email,price,description,image
+           }
 
-        // }
-
-        fetch('http://localhost:5000/services', {
-            method: 'POST',
-            headers: {
+           const url = `https://service-review-server-sable.vercel.app/services`
+       
+        fetch(url,{
+            method:"POST",
+            headers:{
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(service)
+            body:JSON.stringify(services)
+        }).than(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.acknowledge){
+                alert('Service Added');
+  
+                form.reset();
+            }
         })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if(data.acknowledged){
-                    alert('Order placed successfully')
-                    form.reset();
-                    
-                }
-            })
-            .catch(er => console.error(er));
-
+        .catch(err=>console.log(err));
     }
 
 
@@ -61,28 +57,22 @@ const AddService = ({service}) => {
   <div class="card-body">
   <h2 className='text-center text-sky-400 text-3xl mb-5'> Add Service</h2>
 
-    <form className='flex-auto' onSubmit={handlePlaceService}>
-           
-           <input type="text" placeholder="Description" class="input border-1 border-sky-300   w-full max-w-xs mb-2" />
-           
-           <input type="text" placeholder="Name" class="input border-1 border-sky-300 w-full max-w-xs mb-2" />
-           <textarea type="text" class=" w-full max-w-xs mb-2 border-1 border-sky-300 " placeholder="Description" />
-         
-           <input type="number" placeholder="Price" class="input w-full border-1 border-sky-300  max-w-xs mb-2" />
+    <form className='flex-auto' onSubmit={handleAddService}>
 
-           <input type="quantity" placeholder="Quantity" class="input  border-1 border-sky-300 w-full max-w-xs mb-2"   />
+    <input name='title' type="text"  placeholder="Title" class="input border-1 border-sky-300 w-full max-w-xs mb-2" />
 
+           <input   name='description' type="text" placeholder="Description" class="input border-1 border-sky-300   w-full max-w-xs mb-2" />
            
-           <input type="text" placeholder="Supplier" class="input border-1 border-sky-300  w-full max-w-xs mb-2"  />
+           <input name='price' type="number" placeholder="Price"  class="input w-full border-1 border-sky-300  max-w-xs mb-2" />
 
-           <input type="text" placeholder="Photo url" class="input border-1 border-sky-300 w-full max-w-xs mb-2"  />
+           <input name= 'image' type="text"  placeholder="Image url" class="input border-1 border-sky-300 w-full max-w-xs mb-2"  />
 
-           
+           <div class="text-center mx-auto">
+      <button type="submit" class="btn btn-info">Add Service</button>
+    </div>
           
        </form>
-    <div class="card-actions justify-end">
-      <button type="submit" class="btn btn-secondary">Add Items</button>
-    </div>
+    
   </div>
 </div>
        
