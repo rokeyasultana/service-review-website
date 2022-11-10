@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
 
 
 const SignUp = () => {
+  useTitle('Sign Up')
     const [error,setError] =useState('')
   const { googleLogIn, createUser, updateUserProfile } =
   useContext(AuthContext);
@@ -57,7 +59,7 @@ const profileUpdate = (name, photoURL) => {
 
         <div class="form-control">
           <label class="label">
-            <span class="label-text">Full Name</span>
+            <span class="label-text">Name</span>
 
           </label>
           <input name='name' type="text" placeholder="your full name" class="input input-bordered" />
@@ -86,8 +88,9 @@ const profileUpdate = (name, photoURL) => {
           </label>
         </div>
         
+        
         <div class="form-control mt-6 ">
-          <button type='submit' class="btn btn-outline btn-info  ">Sign Up</button>
+          <button  type='submit' class="btn btn-outline btn-info ">Sign Up</button>
         </div>
         </form>
         <p className='text-red-500'>{error}</p>

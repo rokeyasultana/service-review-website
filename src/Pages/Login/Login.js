@@ -2,16 +2,18 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
-
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
+useTitle('Login')
+
     const navigate = useNavigate();
     const location = useLocation();
     const [error, setError] = useState(null);
    
   
   
-      const {providerLogin, logInWithEmailPassword,gitHubLogIn} = useContext(AuthContext)
+      const {providerLogin, logInWithEmailPassword} = useContext(AuthContext)
   
    
     const from = location.state?.from?.pathname || "/";
@@ -86,7 +88,7 @@ const Login = () => {
 </div>
 
    <div className='text-center mt-5 mb-3'>
-   <button  onClick={handleGoogleSignIn} class="btn btn-outline btn-info ">Google</button>
+   <button  onClick={handleGoogleSignIn} class="btn btn-outline btn-info ">Google Sign Up</button>
    </div>
    
 

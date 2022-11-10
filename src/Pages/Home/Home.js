@@ -1,14 +1,16 @@
+
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import useTitle from '../../hooks/useTitle';
 import Offer from './Offer';
 import Services from './Services/Services';
 import Testimonial from './Testimonial/Testimonial';
-
 import TopBanner from './TopBanner';
 
 
 
 const Home = () => {
+    
+    useTitle('Home')
     return (
         <div>
         

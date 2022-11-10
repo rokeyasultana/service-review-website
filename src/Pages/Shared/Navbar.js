@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
 import { FaUser } from 'react-icons/fa';
 
+
 const Navbar = () => {
     const {user,logOut} = useContext(AuthContext);
   
@@ -18,21 +19,29 @@ const Navbar = () => {
    
     <li className='hover:underline hover:text-slate-500 hover:font-semibold'><Link to="/">Home</Link></li>
     <li className='hover:underline hover:text-slate-500 hover:font-semibold'><Link to="/blog">Blog</Link></li>
-
+    { 
+    user && <>
+  
+   <li><Link to="/review"> My Review </Link></li>
+   <li> <Link to="/addservice"> Add service </Link></li>
+                                    
+ </>
+   }     
+         
     <li>{user?.uid ?
                                 <img className='rounded-full gap-3'
                                 title={user?.displayName}
                               style={{width: '70px'}}
                                     src={user?.photoURL}>
                                 </img>
-                                : <div><FaUser color="purple" fontSize="1.5em"/></div>
+                                : <div><FaUser color="slate" fontSize="1.5em"/></div>
                             }
           </li>
     <li className='mt-2 hover:underline hover:text-slate-500 hover:font-semibold'>{user?.uid?  <button onClick={handleLogOut} class="btn btn-ghost ">
  
     
  Sign out</button> :<Link to="/login">Login</Link>}</li>
-               
+      
 </>
     return (
         <div>

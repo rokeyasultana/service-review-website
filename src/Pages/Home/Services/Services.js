@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import Service from './Service';
 
 const Services = () => {
+   
     const [services, setServices] = useState([]);
     
     useEffect( () =>{
-        fetch('http://localhost:5000/services')
+        fetch('https://service-review-server-sable.vercel.app/services')
         .then(res =>res.json())
         .then(data => setServices(data))
     }, []);
