@@ -3,7 +3,7 @@ import './TopBanner.css'
 const TopBanner = () => {
     return (
         <div>
-            <div id='heroBg' class="hero ">
+            <div data-aos="fade-up" data-aos-duration="1500" id='heroBg' class="hero ">
   <div class="hero-overlay bg-opacity-30"></div>
   <div class="hero-content text-center text-neutral-content">
     <div class="max-w-md">

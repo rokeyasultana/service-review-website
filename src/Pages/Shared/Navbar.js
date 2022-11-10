@@ -1,13 +1,37 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
-
+import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
+import { FaUser } from 'react-icons/fa';
 
 const Navbar = () => {
+    const {user,logOut} = useContext(AuthContext);
+  
+    
+   
+
+    const handleLogOut = () => {
+     logOut()
+          .then(() => { })
+          .catch(error => console.error(error))
+  }
     const menuItems = <>
    
     <li className='hover:underline hover:text-slate-500 hover:font-semibold'><Link to="/">Home</Link></li>
     <li className='hover:underline hover:text-slate-500 hover:font-semibold'><Link to="/blog">Blog</Link></li>
-    <li className='hover:underline hover:text-slate-500 hover:font-semibold'><Link to="/login">Login</Link></li>
+
+    <li>{user?.uid ?
+                                <img className='rounded-full gap-3'
+                                title={user?.displayName}
+                              style={{width: '70px'}}
+                                    src={user?.photoURL}>
+                                </img>
+                                : <div><FaUser color="purple" fontSize="1.5em"/></div>
+                            }
+          </li>
+    <li className='mt-2 hover:underline hover:text-slate-500 hover:font-semibold'>{user?.uid?  <button onClick={handleLogOut} class="btn btn-ghost ">
+ 
+    
+ Sign out</button> :<Link to="/login">Login</Link>}</li>
                
 </>
     return (

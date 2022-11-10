@@ -11,9 +11,7 @@ const Blog = () => {
       </div>
       
       <div >
-      <div data-aos="fade-left"
-            data-aos-duration="1000"
-            data-aos-delay="200"   className='justify-center justify-items-center grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2  mt-20 mb-35  gap-4  mb-10 text-black  '>
+      <div data-aos="fade-up" data-aos-duration="1500"  className='justify-center justify-items-center grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2  mt-20 mb-35  gap-4  mb-10 text-black  '>
       <div 
             class="card  card-compact w-96 shadow-xl border-2 border-sky-300">
   

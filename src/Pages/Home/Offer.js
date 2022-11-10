@@ -2,7 +2,7 @@ import React from 'react';
 import './Offer.css'
 const Offer = () => {
     return (
-        <div  className='flex justify-center'>
+        <div  data-aos="fade-up" data-aos-duration="1500" className='flex justify-center'>
             <div id='offer' className='border-2 border-sky-300 mt-5 mb-10 h-44 w-3/4'>
             <div class="indicator ml-20 ">
   <span class="indicator-item badge badge-info text-red-500  font-semibold mt-[-20px]">Offer</span> 
