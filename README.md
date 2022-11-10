@@ -2,6 +2,7 @@
 
 This project (Guide Star) was tailwind css with [Create React App].
 
+### Live site : <a href='https://lustrous-sundae-bd9fc2.netlify.app/'> Guide Start</a>
 
 ### Usage
 * Create react app
@@ -11,5 +12,6 @@ This project (Guide Star) was tailwind css with [Create React App].
 * Daisyui (component libary)
 * Aos
 * React photo viewer
+* Netlify
 
 
